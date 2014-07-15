@@ -50,7 +50,9 @@
 .das form .col.colLeft .formSection .formRow.formRowSlider .right { font-size:12px; float:right; margin-right:10px; position:relative; top:5px; }
 
 .das form .col.colLeft .formSection.formSectionCalculate { background:#ccc; text-align:center; }
-.das form .col.colLeft .formSection.formSectionCalculate h2 { padding:10px; font-size:25px; line-height:30px; }
+.das form .col.colLeft .formSection.formSectionCalculate h2 { padding:10px; font-size:20px; line-height:30px; }
+.das form .col.colLeft .formSection.formSectionCalculate .col { width:55%; }
+.das form .col.colLeft .formSection.formSectionCalculate .col.result { width:45%; }
 
 .das form .col.colRight { width:600px; }
 .das form .col.colRight .overlay { background:transparent url(../gfx/overlay.png); position:absolute; width:590px; height:490px; position:absolute; left:5px; top:5px; z-index:9; }

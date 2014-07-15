@@ -12,6 +12,9 @@ $(document).ready(function(){
     $('input[type=text]').each(function(){
         $(this).val('');
     }); 
+    $('input#tender, input#swollen').each(function(){
+        $(this).attr('disabled','disabled').addClass('disabled');
+    });
     $('input[name=health]').val(0); 
     $('input[type=radio], input[type=checkbox]').each(function(){
         $(this).removeAttr('checked');
@@ -72,6 +75,33 @@ $(document).ready(function(){
         }
     });
     
+    /* validation */
+    $('input[type=text]').keyup(function(){
+            var control = isNaN( $(this).val() );
+            if (control==true){
+                alert('Je třeba zadat číslo');
+                $(this).val('').focus();
+            }    
+    });
+    $('input#tender, input#swollen').keyup(function(){
+            if ( $(this).val()>28){
+                alert('Je třeba zadat číslo od 0 - 28');
+                $(this).val('').focus();
+            }    
+    });
+    $('input#esrText, input#crpText').keyup(function(){
+            if ( $(this).val()>150){
+                alert('Je třeba zadat číslo od 0 - 150');
+                $(this).val('').focus();
+            }    
+    });
+    $('input[name=health]').keyup(function(){
+            if ( $(this).val()>100){
+                alert('Je třeba zadat číslo od 0 - 100');
+                $(this).val('').focus();
+            }    
+    });
+    
     /**/
     $('input[name=global]').change(function(){
         if ( $(this).is(':checked')==true ){
@@ -121,29 +151,26 @@ $(document).ready(function(){
     
     /**/
     $('button[name=calculate]').click(function(e){
-        if ((mode=='das28-3')&&( $('input[name=global]').is(':checked')==true )){
+        if (mode=='das28'){
             result = (0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.70 * Math.log( $('input#esrText').val() )) + 0.014 * $('input[name=health]').val();
-        
         }
-        if ((mode=='das28-3')&&( $('input[name=global]').is(':checked')==false )){
+        if (mode=='das28-3'){
             result = (0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.70 * Math.log( $('input#esrText').val() )) *1.08 + 0.16;
         
         }
-        if ((mode=='das28-crp-3')&&( $('input[name=global]').is(':checked')==true )){
-            //result = [0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log( $('input#crpText').val()+1)] + 0.014 * $('input[name=health]').val() + 0.96;
-            // nResult = 0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log(CRPScore+1) + 0.014 * patientGlobalScore + 0.96
-            //
-            result = 0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log($('input#crpText').val()+1) + 0.014 * $('input[name=health]').val() + 0.96;
-        
-        }
-        if ((mode=='das28-crp-3')&&( $('input[name=global]').is(':checked')==false )){
+        if (mode=='das28-crp-3'){
             //result = [0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log( $('input#crpText').val()+1)] * 1.10 + 1.15;
             //nResult = [0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log(CRPScore+1)] * 1.10 + 1.15
             //
             result = [0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log($('input#crpText').val()+1)] * 1.10 + 1.15;
-        
         }
-        alert(mode+' '+result);
+        if (mode=='das28-crp'){
+            //result = [0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log( $('input#crpText').val()+1)] + 0.014 * $('input[name=health]').val() + 0.96;
+            // nResult = 0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log(CRPScore+1) + 0.014 * patientGlobalScore + 0.96
+            //
+            result = 0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log($('input#crpText').val()+1) + 0.014 * $('input[name=health]').val() + 0.96;
+        }
+        $('.result p').html(result);
         e.preventDefault();
     });
     
