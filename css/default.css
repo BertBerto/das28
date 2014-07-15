@@ -1,0 +1,137 @@
+.das { background:#fff;  font-family: 'Arial', 'Helvetica', sans-serif; font-weight:400; font-size:13px; line-height:18px; color:#3b3b3b; margin:0px; padding: 0px; text-align: left; }
+
+.das .clr { font-size:1px; line-height:1px; clear:both; }
+
+/* DEFAULT RESET */
+.das img, .das fieldset { border:none;  }
+.das p, .das form, .das fieldset, .das ul, .das ol, .das li { margin:0px; padding:0px; }
+.das h1, .das h2, .das h3, .das h4, .das h5, .das h6, .das h7, .das b, .das strong { margin:0px; padding:0px; background-repeat: no-repeat; font-weight:400; }
+.das input, .das textarea { font-family: 'Arial', 'Helvetica', sans-serif; font-weight:400; font-size:13px; }
+.das td { vertical-align: top; text-align: left; padding: 0px; }
+.das li { background-repeat: no-repeat; }
+.das a, .das *:focus { outline: none; }
+.das button::-moz-focus-inner { border:0; padding:0; }
+
+.das form { width:900px; }
+.das form h2 { font-size:14px; font-weight:bold; }
+
+.das .hidden { display:none !important; }
+
+.das form .col { float:left; position:relative; }
+.das form .col.colLeft { width:300px; }
+.das form .col.colLeft .formSection { border:1px #ddd solid; margin:5px; padding-bottom:10px; margin-bottom:10px; }
+.das form .col.colLeft .formSection.scores { height:180px; }
+.das form .col.colLeft .formSection.measures { height:180px; }
+.das form .col.colLeft .formSection h2 { display:block; background:#ccc; color:#fff; padding:5px; text-align:center; margin-bottom:2px; }
+.das form .col.colLeft .formSection > p { padding:5px; }
+
+.das form .col.colLeft .formSection .formRow { padding:5px; }
+
+.das form .col.colLeft .formSection .formRow.formRowText { }
+.das form .col.colLeft .formSection .formRow.formRowText p { float:left; width:100px; }
+.das form .col.colLeft .formSection .formRow.formRowText p label { position:relative; top:2px; } 
+.das form .col.colLeft .formSection .formRow.formRowText input { float:left; width:150px; height:20px; border-collapse:collapse; border:1px #ddd solid; padding-left:5px; }
+
+.das form .col.colLeft .formSection .formRow.formRowRadioType1 { padding-left:100px; }
+
+.das form .col.colLeft .formSection .formRow.formRowRadioType2 { }
+.das form .col.colLeft .formSection .formRow.formRowRadioType2 p { float:left; width:50px; }
+.das form .col.colLeft .formSection .formRow.formRowRadioType2 p label { position:relative; top:2px; } 
+.das form .col.colLeft .formSection .formRow.formRowRadioType2 input.radio { float:left; margin-right:10px; }
+.das form .col.colLeft .formSection .formRow.formRowRadioType2 input.txt { float:left; width:100px; height:20px; border-collapse:collapse; border:1px #ddd solid; padding-left:5px; margin-right:5px; }
+
+.das form .col.colLeft .formSection .formRow.formRowSlider { border-top:1px #ddd solid; margin-top:5px; }
+.das form .col.colLeft .formSection .formRow.formRowSlider input.check { float:left; margin-right:10px; }
+.das form .col.colLeft .formSection .formRow.formRowSlider p { float:left; width:150px; }
+.das form .col.colLeft .formSection .formRow.formRowSlider p label { position:relative; top:2px; } 
+.das form .col.colLeft .formSection .formRow.formRowSlider input.txt { float:right; width:50px; height:20px; border-collapse:collapse; border:1px #ddd solid; padding-left:5px; }
+.das form .col.colLeft .formSection .formRow.formRowSlider #slider { margin-top:20px; margin-left:10px; margin-right:10px; }
+.das form .col.colLeft .formSection .formRow.formRowSlider .left { font-size:12px; float:left; margin-left:10px; position:relative; top:5px; }
+.das form .col.colLeft .formSection .formRow.formRowSlider .right { font-size:12px; float:right; margin-right:10px; position:relative; top:5px; }
+
+.das form .col.colLeft .formSection.formSectionCalculate { background:#ccc; text-align:center; }
+.das form .col.colLeft .formSection.formSectionCalculate h2 { padding:10px; font-size:25px; line-height:30px; }
+
+.das form .col.colRight { width:600px; }
+.das form .col.colRight .overlay { background:transparent url(../gfx/overlay.png); position:absolute; width:590px; height:490px; position:absolute; left:5px; top:5px; z-index:9; }
+.das form .col.colRight .mannequinBox { width:300px; position:relative; float:left; position:relative; text-align:center; }
+.das form .col.colRight .mannequinBox h2 { text-align:center; margin-top:30px; }
+.das form .col.colRight .mannequinBox button { margin:auto; position:relative; top:10px; }
+.das form .col.colRight .mannequinBox .mannequin { width:297px; height:397px; background:#fff url(../gfx/mannequin.png) 0px 0px no-repeat; position:relative; left:5px; top:5px; }
+.das form .col.colRight .mannequinBox .mannequin input { position:absolute; }
+.das form .col.colRight .mannequinBox .mannequin .t01 { left: 98px; top: 65px; }
+.das form .col.colRight .mannequinBox .mannequin .t02 { left: 174px; top: 65px; }
+.das form .col.colRight .mannequinBox .mannequin .t03 { left: 94px; top: 137px; }
+.das form .col.colRight .mannequinBox .mannequin .t04 { left: 177px; top: 137px; }
+.das form .col.colRight .mannequinBox .mannequin .t05 { left: 77px; top: 200px; }
+.das form .col.colRight .mannequinBox .mannequin .t06 { left: 196px; top: 198px; }
+.das form .col.colRight .mannequinBox .mannequin .t07 { left: 28px; top: 252px; }
+.das form .col.colRight .mannequinBox .mannequin .t08 { left: 244px; top: 251px; }
+.das form .col.colRight .mannequinBox .mannequin .t09 { left: 2px; top: 284px; }
+.das form .col.colRight .mannequinBox .mannequin .t10 { left: 271px; top: 284px; }
+.das form .col.colRight .mannequinBox .mannequin .t11 { left: 28px; top: 299px; }
+.das form .col.colRight .mannequinBox .mannequin .t12 { left: 20px; top: 322px; }
+.das form .col.colRight .mannequinBox .mannequin .t13 { left: 46px; top: 304px; }
+.das form .col.colRight .mannequinBox .mannequin .t14 { left: 42px; top: 328px; }
+.das form .col.colRight .mannequinBox .mannequin .t15 { left: 62px; top: 304px; }
+.das form .col.colRight .mannequinBox .mannequin .t16 { left: 58px; top: 330px; }
+.das form .col.colRight .mannequinBox .mannequin .t17 { left: 77px; top: 304px; }
+.das form .col.colRight .mannequinBox .mannequin .t18 { left: 77px; top: 325px; }
+.das form .col.colRight .mannequinBox .mannequin .t19 { left: 244px; top: 299px; }
+.das form .col.colRight .mannequinBox .mannequin .t20 { left: 252px; top: 320px; }
+.das form .col.colRight .mannequinBox .mannequin .t21 { left: 231px; top: 304px; }
+.das form .col.colRight .mannequinBox .mannequin .t22 { left: 235px; top: 330px; }
+.das form .col.colRight .mannequinBox .mannequin .t23 { left: 217px; top: 304px; }
+.das form .col.colRight .mannequinBox .mannequin .t24 { left: 217px; top: 330px; }
+.das form .col.colRight .mannequinBox .mannequin .t25 { left: 201px; top: 300px; }
+.das form .col.colRight .mannequinBox .mannequin .t26 { left: 199px; top: 322px; }
+.das form .col.colRight .mannequinBox .mannequin .t27 { left: 118px; top: 271px; }
+.das form .col.colRight .mannequinBox .mannequin .t28 { left: 156px; top: 271px; }
+
+.das form .col.colRight .mannequinBox .mannequin .s01 { left: 98px; top: 65px; }
+.das form .col.colRight .mannequinBox .mannequin .s02 { left: 174px; top: 65px; }
+.das form .col.colRight .mannequinBox .mannequin .s03 { left: 94px; top: 137px; }
+.das form .col.colRight .mannequinBox .mannequin .s04 { left: 177px; top: 137px; }
+.das form .col.colRight .mannequinBox .mannequin .s05 { left: 77px; top: 200px; }
+.das form .col.colRight .mannequinBox .mannequin .s06 { left: 196px; top: 198px; }
+.das form .col.colRight .mannequinBox .mannequin .s07 { left: 28px; top: 252px; }
+.das form .col.colRight .mannequinBox .mannequin .s08 { left: 244px; top: 251px; }
+.das form .col.colRight .mannequinBox .mannequin .s09 { left: 2px; top: 284px; }
+.das form .col.colRight .mannequinBox .mannequin .s10 { left: 271px; top: 284px; }
+.das form .col.colRight .mannequinBox .mannequin .s11 { left: 28px; top: 299px; }
+.das form .col.colRight .mannequinBox .mannequin .s12 { left: 20px; top: 322px; }
+.das form .col.colRight .mannequinBox .mannequin .s13 { left: 46px; top: 304px; }
+.das form .col.colRight .mannequinBox .mannequin .s14 { left: 42px; top: 328px; }
+.das form .col.colRight .mannequinBox .mannequin .s15 { left: 62px; top: 304px; }
+.das form .col.colRight .mannequinBox .mannequin .s16 { left: 58px; top: 330px; }
+.das form .col.colRight .mannequinBox .mannequin .s17 { left: 77px; top: 304px; }
+.das form .col.colRight .mannequinBox .mannequin .s18 { left: 77px; top: 325px; }
+.das form .col.colRight .mannequinBox .mannequin .s19 { left: 244px; top: 299px; }
+.das form .col.colRight .mannequinBox .mannequin .s20 { left: 252px; top: 320px; }
+.das form .col.colRight .mannequinBox .mannequin .s21 { left: 231px; top: 304px; }
+.das form .col.colRight .mannequinBox .mannequin .s22 { left: 235px; top: 330px; }
+.das form .col.colRight .mannequinBox .mannequin .s23 { left: 217px; top: 304px; }
+.das form .col.colRight .mannequinBox .mannequin .s24 { left: 217px; top: 330px; }
+.das form .col.colRight .mannequinBox .mannequin .s25 { left: 201px; top: 300px; }
+.das form .col.colRight .mannequinBox .mannequin .s26 { left: 199px; top: 322px; }
+.das form .col.colRight .mannequinBox .mannequin .s27 { left: 118px; top: 271px; }
+.das form .col.colRight .mannequinBox .mannequin .s28 { left: 156px; top: 271px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

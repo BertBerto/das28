@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <title></title>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>  
+     <script type="text/javascript" src="js/jquery-ui.min.js"></script>  
+     <script type="text/javascript" src="js/init.js?v=1"></script>   
+     
+     <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.min.css">
+     <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.structure.min.css">
+     <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.theme.min.css">
+     <link rel="stylesheet" type="text/css" media="screen" href="css/default.css">
+</head>
+
+<body class="">
+
+    <div class="das">
+        <form action="" method="post">
+            <div class="col colLeft">
+                <div class="formSection scores">
+                    <h2>Joint Scores</h2>
+                    <div class="formRow formRowText">
+                        <p><label for="tender">Tender:</label></p>
+                        <input type="text" id="tender" name="tender" class="disabled" disabled>
+                        <div class="clr"></div>
+                    </div>
+                    <div class="formRow formRowText">
+                        <p><label for="swollen">Swollen:</label></p>
+                        <input type="text" id="swollen" name="swollen" class="disabled" disabled>
+                        <div class="clr"></div>
+                    </div>
+                    <p>To enter joint scores, I prefer to:</p>
+                    <div class="formRow formRowRadioType1">
+                        <input type="radio" id="mannequin" name="enter" value="mannequin" checked>
+                        <label for="mannequin">Use Mannequin</label>
+                        <div class="clr"></div>
+                    </div>
+                    <div class="formRow formRowRadioType1">
+                        <input type="radio" id="type" name="enter" value="type">
+                        <label for="type">Type totals</label>
+                        <div class="clr"></div>
+                    </div>
+                </div>
+                <div class="formSection measures">
+                    <h2>Additional Measures</h2>
+                    <div class="formRow formRowRadioType2">
+                        <input type="radio" id="esr" name="measures" value="esr" class="radio" checked>
+                        <p><label for="esr">ESR:</label></p>
+                        <input type="text" id="esrText" name="esrText" class="txt"><span>mm/hr</span>
+                        <div class="clr"></div>
+                    </div>
+                    <div class="formRow formRowRadioType2">
+                        <input type="radio" id="crp" name="measures" value="crp" class="radio">
+                        <p><label for="crp">CRP:</label></p>
+                        <input type="text" id="crpText" name="crpText" class="txt disabled" disabled><span>mg/l</span>
+                        <div class="clr"></div>
+                    </div>
+                    <div class="formRow formRowSlider">
+                        <input type="checkbox" name="global" id="global" class="check" checked>
+                        <p><label for="global">Patient Global Health</label></p>
+                        <input type="text" name="health" value="0" class="txt">
+                        <div class="clr"></div>
+                        
+                        <div id="slider"></div>
+                        <span class="left">0 - Best</span>
+                        <span class="right">100 - Worst</span>
+                        <div class="clr"></div>
+                    </div>
+                </div>
+                <div class="formSection formSectionCalculate">
+                    <h2 class="">DAS28-CRP 3</h2>
+                    <button name="calculate">Calculate</button>
+                    <div class="clr"></div>
+                </div>
+            </div>
+            <div class="col colRight">
+                <span class="overlay hidden"></span>
+                <div class="mannequinBox mannequinLeft">
+                    <h2>Tender Joints</h2>
+                    <div class="mannequin">
+                        <input type="checkbox" name="t01" class="t01">
+                        <input type="checkbox" name="t02" class="t02">
+                        <input type="checkbox" name="t03" class="t03">
+                        <input type="checkbox" name="t04" class="t04">
+                        <input type="checkbox" name="t05" class="t05">
+                        <input type="checkbox" name="t06" class="t06">
+                        <input type="checkbox" name="t07" class="t07">
+                        <input type="checkbox" name="t08" class="t08">
+                        <input type="checkbox" name="t09" class="t09">
+                        <input type="checkbox" name="t10" class="t10">
+                        <input type="checkbox" name="t11" class="t11">
+                        <input type="checkbox" name="t12" class="t12">
+                        <input type="checkbox" name="t13" class="t13">
+                        <input type="checkbox" name="t14" class="t14">
+                        <input type="checkbox" name="t15" class="t15">
+                        <input type="checkbox" name="t16" class="t16">
+                        <input type="checkbox" name="t17" class="t17">
+                        <input type="checkbox" name="t18" class="t18">
+                        <input type="checkbox" name="t19" class="t19">
+                        <input type="checkbox" name="t20" class="t20">
+                        <input type="checkbox" name="t21" class="t21">
+                        <input type="checkbox" name="t22" class="t22">
+                        <input type="checkbox" name="t23" class="t23">
+                        <input type="checkbox" name="t24" class="t24">
+                        <input type="checkbox" name="t25" class="t25">
+                        <input type="checkbox" name="t26" class="t26">
+                        <input type="checkbox" name="t27" class="t27">
+                        <input type="checkbox" name="t28" class="t28">
+                    </div>
+                    <button class="clear">Clear all</button>
+                </div>
+                <div class="mannequinBox mannequinRight">
+                    <h2>Swollen Joints</h2>
+                    <div class="mannequin">
+                        <input type="checkbox" name="s01" class="s01">
+                        <input type="checkbox" name="s02" class="s02">
+                        <input type="checkbox" name="s03" class="s03">
+                        <input type="checkbox" name="s04" class="s04">
+                        <input type="checkbox" name="s05" class="s05">
+                        <input type="checkbox" name="s06" class="s06">
+                        <input type="checkbox" name="s07" class="s07">
+                        <input type="checkbox" name="s08" class="s08">
+                        <input type="checkbox" name="s09" class="s09">
+                        <input type="checkbox" name="s10" class="s10">
+                        <input type="checkbox" name="s11" class="s11">
+                        <input type="checkbox" name="s12" class="s12">
+                        <input type="checkbox" name="s13" class="s13">
+                        <input type="checkbox" name="s14" class="s14">
+                        <input type="checkbox" name="s15" class="s15">
+                        <input type="checkbox" name="s16" class="s16">
+                        <input type="checkbox" name="s17" class="s17">
+                        <input type="checkbox" name="s18" class="s18">
+                        <input type="checkbox" name="s19" class="s19">
+                        <input type="checkbox" name="s20" class="s20">
+                        <input type="checkbox" name="s21" class="s21">
+                        <input type="checkbox" name="s22" class="s22">
+                        <input type="checkbox" name="s23" class="s23">
+                        <input type="checkbox" name="s24" class="s24">
+                        <input type="checkbox" name="s25" class="s25">
+                        <input type="checkbox" name="s26" class="s26">
+                        <input type="checkbox" name="s27" class="s27">
+                        <input type="checkbox" name="s28" class="s28">
+                    </div>
+                    <button class="clear">Clear all</button>
+                </div>    
+            </div>
+            <div class="clr"></div>
+        </form>
+    </div>
+
+</body>
+</html>
