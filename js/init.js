@@ -153,9 +153,11 @@ $(document).ready(function(){
     $('button[name=calculate]').click(function(e){
         if (mode=='das28'){
             result = (0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.70 * Math.log( $('input#esrText').val() )) + 0.014 * $('input[name=health]').val();
+            formula = '(0.56 * Math.sqrt('+tenderJointScore+') + 0.28 * Math.sqrt('+swollenJointScore+') + 0.70 * Math.log( '+$('input#esrText').val()+' )) + 0.014 * '+$('input[name=health]').val();
         }
         if (mode=='das28-3'){
             result = (0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.70 * Math.log( $('input#esrText').val() )) *1.08 + 0.16;
+            formula = '(0.56 * Math.sqrt('+tenderJointScore+') + 0.28 * Math.sqrt('+swollenJointScore+') + 0.70 * Math.log( '+$('input#esrText').val()+' )) *1.08 + 0.16';
         
         }
         if (mode=='das28-crp-3'){
@@ -163,14 +165,17 @@ $(document).ready(function(){
             //nResult = [0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log(CRPScore+1)] * 1.10 + 1.15
             //
             result = [0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log($('input#crpText').val()+1)] * 1.10 + 1.15;
+            formula = '[0.56 * Math.sqrt('+tenderJointScore+') + 0.28 * Math.sqrt('+swollenJointScore+') + 0.36 * Math.log( '+$('input#crpText').val()+' +1)] * 1.10 + 1.15';
         }
         if (mode=='das28-crp'){
             //result = [0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log( $('input#crpText').val()+1)] + 0.014 * $('input[name=health]').val() + 0.96;
             // nResult = 0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log(CRPScore+1) + 0.014 * patientGlobalScore + 0.96
             //
             result = 0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log($('input#crpText').val()+1) + 0.014 * $('input[name=health]').val() + 0.96;
+            formula = '0.56 * Math.sqrt('+tenderJointScore+') + 0.28 * Math.sqrt('+swollenJointScore+') + 0.36 * Math.log( '+$('input#crpText').val()+' +1) + 0.014 * '+$('input[name=health]').val()+' + 0.96';
         }
         $('.result p').html(result);
+        $('.formula p').html(formula);
         e.preventDefault();
     });
     
