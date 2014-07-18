@@ -16,8 +16,15 @@
 .das form h2 { font-size:14px; font-weight:bold; }
 
 .das .hidden { display:none !important; }
+.das .disabled { background:#ddd; cursor:not-allowed; }
 
 .das form .col { float:left; position:relative; }
+
+.das form .col.colTop { background:#ddd; width:100%; margin-left:5px; margin-right:5px; padding-top:10px; padding-bottom:10px; }
+.das form .col.colTop p { padding-left:10px; display:inline; }
+.das form .col.colTop input { width:100px; height:30px !important; font-size:16px; position:relative; left:10px; border-collapse:collapse; border:1px #ddd solid; padding-left:5px; }
+
+
 .das form .col.colLeft { width:300px; }
 .das form .col.colLeft .formSection { border:1px #ddd solid; margin:5px; padding-bottom:10px; margin-bottom:10px; }
 .das form .col.colLeft .formSection.scores { height:180px; }
@@ -49,13 +56,19 @@
 .das form .col.colLeft .formSection .formRow.formRowSlider .left { font-size:12px; float:left; margin-left:10px; position:relative; top:5px; }
 .das form .col.colLeft .formSection .formRow.formRowSlider .right { font-size:12px; float:right; margin-right:10px; position:relative; top:5px; }
 
-.das form .col.colLeft .formSection.formSectionCalculate { background:#ccc; text-align:center; }
+.das form .col.colLeft .formSection.formSectionCalculate { background:#ccc; text-align:center; padding-bottom:0px; height:80px; }
 .das form .col.colLeft .formSection.formSectionCalculate h2 { padding:10px; font-size:20px; line-height:30px; }
 .das form .col.colLeft .formSection.formSectionCalculate .col { width:55%; }
-.das form .col.colLeft .formSection.formSectionCalculate .col.result { width:45%; }
+.das form .col.colLeft .formSection.formSectionCalculate .col.result { width:45%; height:80px; position:relative; }
+.das form .col.colLeft .formSection.formSectionCalculate .col.result.RemissionStatus { background-color:#b2d1a5; }
+.das form .col.colLeft .formSection.formSectionCalculate .col.result.LowActivityStatus { background-color:#ced3b3; }
+.das form .col.colLeft .formSection.formSectionCalculate .col.result.ModerateActivityStatus { background-color:#ebc5a0; }
+.das form .col.colLeft .formSection.formSectionCalculate .col.result.HighActivityStatus { background-color:#f56d53; }
+.das form .col.colLeft .formSection.formSectionCalculate .col.result .num { font-weight:bold; font-size:20px; position:absolute; top:20px; left:5px; right:5px; }
+.das form .col.colLeft .formSection.formSectionCalculate .col.result .txt { font-size:11px; line-height:13px; position:absolute; bottom:5px; left:5px; right:5px; }
 
 .das form .col.colRight { width:600px; }
-.das form .col.colRight .overlay { background:transparent url(../gfx/overlay.png); position:absolute; width:590px; height:490px; position:absolute; left:5px; top:5px; z-index:9; }
+.das form .col.colRight .overlay { background:transparent url(../gfx/overlay.png); position:absolute; width:590px; height:490px; position:absolute; left:5px; top:5px; z-index:9; cursor:not-allowed; }
 .das form .col.colRight .mannequinBox { width:300px; position:relative; float:left; position:relative; text-align:center; }
 .das form .col.colRight .mannequinBox h2 { text-align:center; margin-top:30px; }
 .das form .col.colRight .mannequinBox button { margin:auto; position:relative; top:10px; }

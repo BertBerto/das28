@@ -11,16 +11,23 @@
      <script type="text/javascript" src="js/jquery-ui.min.js"></script>  
      <script type="text/javascript" src="js/init.js?v=1"></script>   
      
-     <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.min.css">
-     <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.structure.min.css">
-     <link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.theme.min.css">
-     <link rel="stylesheet" type="text/css" media="screen" href="css/default.css">
+     <link rel="stylesheet" type="text/css" media="screen, print" href="css/jquery-ui.min.css">
+     <link rel="stylesheet" type="text/css" media="screen, print" href="css/jquery-ui.structure.min.css">
+     <link rel="stylesheet" type="text/css" media="screen, print" href="css/jquery-ui.theme.min.css">
+     <link rel="stylesheet" type="text/css" media="screen, print" href="css/default.css">
 </head>
 
 <body class="">
 
     <div class="das">
         <form action="" method="post">
+            <div class="col colTop">
+                <div class="formRow formRowWide">
+                    <p><label for="patient-id">Enter the patient's ID for printing</label></p>
+                    <input type="text" id="patient-id" name="patient-id">
+                </div>
+            </div>
+            <div class="clr"></div>
             <div class="col colLeft">
                 <div class="formSection scores">
                     <h2>Joint Scores</h2>
@@ -63,7 +70,7 @@
                     <div class="formRow formRowSlider">
                         <input type="checkbox" name="global" id="global" class="check" checked>
                         <p><label for="global">Patient Global Health</label></p>
-                        <input type="text" name="health" value="0" class="txt">
+                        <input type="text" name="health" value="0" class="txt" id="health">
                         <div class="clr"></div>
                         
                         <div id="slider"></div>
@@ -78,7 +85,8 @@
                         <button name="calculate">Calculate</button>
                     </div>
                     <div class="col result">
-                        <p></p>
+                        <p class="num"></p>
+                        <p class="txt"></p>
                     </div>
                     <div class="clr"></div>
                 </div>
@@ -156,7 +164,7 @@
             </div>
             <div class="clr"></div>
             <div class="formula">
-                <p></p>
+                <p>Formula: </p>
             </div>
         </form>
     </div>
