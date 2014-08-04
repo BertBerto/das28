@@ -1,6 +1,8 @@
 $(document).ready(function(){
-     
-    /* init*/
+
+    /* init */
+    var locale = 'cs';
+    fillTexts('cs');
     var numTender;
     var numSwollen;
     var mode = 'das28';
@@ -22,6 +24,15 @@ $(document).ready(function(){
     $('input#mannequin, input#esr, input#global').each(function(){
         $( this ).prop('checked', true);
     }); 
+    
+    /* lang buttons */
+    $('.lang a').click(function(e){
+        $('.lang a').removeClass('active');
+        $(this).addClass('active');
+        locale = $(this).attr('data-lang');
+        fillTexts(locale);
+        e.preventDefault();
+    });
      
     $( "#slider" ).slider({
         range: "min",
@@ -206,22 +217,38 @@ $(document).ready(function(){
         result = Math.round(result * 100) / 100;
         if (result < 2.6)
         {
-            resultText = "Remission";
+            if (locale='cs'){
+                resultText = "Remise";
+            }else{
+                resultText = "Remission";
+            }
             resultClass = "RemissionStatus";
         }
         else if (result < 3.2)
         {
-            resultText = "Low disease activity";
+            if (locale='cs'){
+                resultText = "Nízká aktivita nemoci";
+            }else{
+                resultText = "Low disease activity";
+            }
             resultClass = "LowActivityStatus";
         }
         else if (result >=3.2 && result <= 5.1)
         {
-            resultText = "Moderate disease activity";
+            if (locale='cs'){
+                resultText = "Střední aktivita nemoci";
+            }else{
+                resultText = "Moderate disease activity";
+            }
             resultClass = "ModerateActivityStatus";
         }  
         else if (result >5.1)
         {
-            resultText = "High disease activity";
+            if (locale='cs'){
+                resultText = "Vysoká aktivita nemoci";
+            }else{
+                resultText = "High disease activity";
+            }
             resultClass = "HighActivityStatus";
         } 
         $('.result').addClass(resultClass);
@@ -235,53 +262,37 @@ $(document).ready(function(){
     
 });
 
-/*
-
-FORMULA:DAS28-CRP(4) = 0.56*sqrt(TJC28) + 0.28*sqrt(SJC28) + 0.36*ln(CRP+1) + 0.014*GH + 0.96     Reference: http://www.das-score.nl
-
-
-2 crp 1 0
-0.56 * Math.sqrt(2) + 0.28 * Math.sqrt(0) + 0.36 * Math.log( 1 +1) + 0.014 * 0 + 0.96
-má vyjít 2
-ale vychází 2,6
-
-0.56 X 1,41 + 0.28 X 0 + 0.36 X 0,69 + 0 + 0,96
-0.78 + 0 + 0,24 + 0,96
-
-
-
-
-
-
-
-
- 
-if (errorText == "")
-        {
-            case "DAS28 3":
-
-              // FORMULA:  DAS28(3) = [0.56*sqrt(t28) + 0.28*sqrt(sw28) + 0.70*Ln(ESR)]*1.08 + 0.16 
-
-              nResult = (0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.70 * Math.log(ESRScore)) *1.08 + 0.16
-              break;
-
-            case "DAS28-CRP 3":
-
-            // FORMULA: DAS28-CRP(3) = [0.56*sqrt(TJC28) + 0.28*sqrt(SJC28) + 0.36*ln(CRP+1)] * 1.10 + 1.15 
-
-              nResult = [0.56 * Math.sqrt(tenderJointScore) + 0.28 * Math.sqrt(swollenJointScore) + 0.36 * Math.log(CRPScore+1)] * 1.10 + 1.15
-              break;
-            default:
-             errorText = "Unknown test";
-             alert("Error Text: " + errorText)
-            }    
-            nResult = Math.round(nResult * 100) / 100 //round to two decimal places
-        }
-    }
-
-*/
 
 $(window).ready(function(){
 
  
 });
+
+function fillTexts(locale){
+    /* locale */
+    var texts = [
+        { name:'jointScores', en:'Joint Scores', cs:'Počet kloubů' },
+        { name:'tender', en:'Tender', cs:'Bolestivý' },
+        { name:'swollen', en:'Swollen', cs:'Oteklý' },
+        { name:'toEnter', en:'To enter joint scores, I prefer to:', cs:'To enter joint scores, I prefer to:' },
+        { name:'useMannequin', en:'Use Mannequin', cs:'Use Mannequin' },
+        { name:'typeTotals', en:'Type totals Scores', cs:'Type totals' },
+        { name:'measures', en:'Additional measures', cs:'Additional measures' },
+        { name:'esr', en:'ESR', cs:'Sedimentace' },
+        { name:'crp', en:'CRP - C', cs:'Reaktivní protein' },
+        { name:'globalHealth', en:'Patient Global Health', cs:'Celkový zdravotní stav' },
+        { name:'calculate', en:'Calculate', cs:'Calculate' },
+        { name:'formula', en:'Formula', cs:'Formula' },
+        { name:'tenderJoints', en:'Tender Joints', cs:'Bolestivé klouby' },
+        { name:'swollenJoints', en:'Swollen Joints', cs:'Oteklé klouby' },
+        { name:'remission', en:'Remission', cs:'Remise' },
+        { name:'lowActivity', en:'Low disease activity', cs:'Nízká aktivita nemoci' },
+        { name:'moderateActivity', en:'Moderate disease activity', cs:'Střední aktivita nemoci' },
+        { name:'highActivity', en:'High disease activity', cs:'Vysoká aktivita nemoci' }
+    ];
+    /* fill text function */
+    $('.locale').each(function(){
+        var thisId = $(this).attr('data-locale');
+        $(this).text( texts[thisId][locale] );
+    });
+}

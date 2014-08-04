@@ -20,9 +20,15 @@
 
 .das form .col { float:left; position:relative; }
 
-.das form .col.colTop { background:#ddd; width:100%; margin-left:5px; margin-right:5px; padding-top:10px; padding-bottom:10px; }
+.das form .col.colTop { background:#ddd; width:100%; margin-left:5px; margin-right:5px; padding-top:10px; padding-bottom:10px; position:relative; }
 .das form .col.colTop p { padding-left:10px; display:inline; }
 .das form .col.colTop input { width:100px; height:30px !important; font-size:16px; position:relative; left:10px; border-collapse:collapse; border:1px #ddd solid; padding-left:5px; }
+.das form .col.colTop .lang { position:absolute; right:5px; top:5px; }
+.das form .col.colTop .lang a { display:block; width:30px; height:20px; margin-bottom:5px; opacity:0.5; }
+.das form .col.colTop .lang a.active { opacity:1; }
+.das form .col.colTop .lang a.en { background:transparent url(../gfx/flag-en.png) 0px 0px no-repeat; }
+.das form .col.colTop .lang a.cs { background:transparent url(../gfx/flag-cs.png) 0px 0px no-repeat; }
+
 
 
 .das form .col.colLeft { width:300px; }

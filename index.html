@@ -26,50 +26,54 @@
                     <p><label for="patient-id">Enter the patient's ID for printing</label></p>
                     <input type="text" id="patient-id" name="patient-id">
                 </div>
+                <div class="lang">
+                    <a href="" class="en" data-lang="en"></a>
+                    <a href="" class="cs active" data-lang="cs"></a>
+                </div>
             </div>
             <div class="clr"></div>
             <div class="col colLeft">
                 <div class="formSection scores">
-                    <h2>Joint Scores</h2>
+                    <h2 class="locale" data-locale="0">Joint Scores</h2>
                     <div class="formRow formRowText">
-                        <p><label for="tender">Tender:</label></p>
+                        <p><label for="tender" class="locale" data-locale="1">Tender:</label></p>
                         <input type="text" id="tender" name="tender" class="disabled" disabled>
                         <div class="clr"></div>
                     </div>
                     <div class="formRow formRowText">
-                        <p><label for="swollen">Swollen:</label></p>
+                        <p><label for="swollen" class="locale" data-locale="2">Swollen:</label></p>
                         <input type="text" id="swollen" name="swollen" class="disabled" disabled>
                         <div class="clr"></div>
                     </div>
-                    <p>To enter joint scores, I prefer to:</p>
+                    <p class="locale" data-locale="3">To enter joint scores, I prefer to:</p>
                     <div class="formRow formRowRadioType1">
                         <input type="radio" id="mannequin" name="enter" value="mannequin" checked>
-                        <label for="mannequin">Use Mannequin</label>
+                        <label for="mannequin" class="locale" data-locale="4">Use Mannequin</label>
                         <div class="clr"></div>
                     </div>
                     <div class="formRow formRowRadioType1">
                         <input type="radio" id="type" name="enter" value="type">
-                        <label for="type">Type totals</label>
+                        <label for="type" class="locale" data-locale="5">Type totals</label>
                         <div class="clr"></div>
                     </div>
                 </div>
                 <div class="formSection measures">
-                    <h2>Additional Measures</h2>
+                    <h2 class="locale" data-locale="6">Additional Measures</h2>
                     <div class="formRow formRowRadioType2">
                         <input type="radio" id="esr" name="measures" value="esr" class="radio" checked>
-                        <p><label for="esr">ESR:</label></p>
+                        <p><label for="esr" class="locale" data-locale="7">ESR:</label></p>
                         <input type="text" id="esrText" name="esrText" class="txt"><span>mm/hr</span>
                         <div class="clr"></div>
                     </div>
                     <div class="formRow formRowRadioType2">
                         <input type="radio" id="crp" name="measures" value="crp" class="radio">
-                        <p><label for="crp">CRP:</label></p>
+                        <p><label for="crp" class="locale" data-locale="8">CRP:</label></p>
                         <input type="text" id="crpText" name="crpText" class="txt disabled" disabled><span>mg/l</span>
                         <div class="clr"></div>
                     </div>
                     <div class="formRow formRowSlider">
                         <input type="checkbox" name="global" id="global" class="check" checked>
-                        <p><label for="global">Patient Global Health</label></p>
+                        <p><label for="global" class="locale" data-locale="9">Patient Global Health</label></p>
                         <input type="text" name="health" value="0" class="txt" id="health">
                         <div class="clr"></div>
                         
@@ -82,7 +86,7 @@
                 <div class="formSection formSectionCalculate">
                     <div class="col">
                         <h2 class="">DAS28-CRP 3</h2>
-                        <button name="calculate">Calculate</button>
+                        <button name="calculate" class="locale" data-locale="10">Calculate</button>
                     </div>
                     <div class="col result">
                         <p class="num"></p>
@@ -94,7 +98,7 @@
             <div class="col colRight">
                 <span class="overlay hidden"></span>
                 <div class="mannequinBox mannequinLeft">
-                    <h2>Tender Joints</h2>
+                    <h2 class="locale" data-locale="12">Tender Joints</h2>
                     <div class="mannequin">
                         <input type="checkbox" name="t01" class="t01">
                         <input type="checkbox" name="t02" class="t02">
@@ -128,7 +132,7 @@
                     <button class="clear">Clear all</button>
                 </div>
                 <div class="mannequinBox mannequinRight">
-                    <h2>Swollen Joints</h2>
+                    <h2 class="locale" data-locale="13">Swollen Joints</h2>
                     <div class="mannequin">
                         <input type="checkbox" name="s01" class="s01">
                         <input type="checkbox" name="s02" class="s02">
@@ -164,7 +168,7 @@
             </div>
             <div class="clr"></div>
             <div class="formula">
-                <p>Formula: </p>
+                <p class="locale" data-locale="11">Formula: </p>
             </div>
         </form>
     </div>
