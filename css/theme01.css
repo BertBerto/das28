@@ -1,0 +1,23 @@
+/* colors */
+.das * {
+	color: #3a5a8b;
+}
+
+.das form .col.colTop,
+.das form .formula,
+.das form .col.colLeft .formSection.formSectionCalculate,
+.das form .col.colLeft .formSection h2 {
+	background-color:#ceeee7;
+}
+.das form .col.colLeft .formSection h2 {
+	color:#04ac8c;
+}
+.das form .col.colLeft .formSection .formRow.formRowText input,
+.das form .col.colLeft .formSection .formRow.formRowRadioType2 input.txt,
+.das form .col.colLeft .formSection .formRow.formRowSlider input.txt {
+	border-color:#ceeee7;
+}
+.das form .col.colLeft .formSection,
+.das form .col.colTop input {
+	border-color:#04ac8c;
+}
